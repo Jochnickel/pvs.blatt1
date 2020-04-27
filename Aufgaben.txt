@@ -63,3 +63,4 @@ Man sollte die Exception entweder in Eagle oder Main fangen und behandeln. Dies 
 
 6. Generics
 
+Man kann mithilfe von Generics dass Typecasten weglassen. Typecasting birgt immer die Gefahr, dass logische Fehler zur Compile-Zeit nicht erkannt werden. (Hinzufügen von anderen Objekten zur Liste).
