@@ -1,0 +1,65 @@
+2.
+1)
+Sichtbar:		inTheAir	wings	food	legs	name
+AbstractAnimal: Nein		Nein	Ja		Ja		Nein
+AbstractBird:	Ja			Ja		Nein	Ja		Nein
+Eagle:			Nein		Ja		Nein	Ja		Ja
+Main:			Nein		Nein	Nein	Nein	Nein
+
+2)
+Nein, die Variable wings ist final und kann nur einmal gesetzt werden. Dies passiert schon im Konstruktor.
+
+3)
+Sichtbar:		AbstractAnimal()	burnFood()	hunt()	isFlying()	eat()
+AbstractAnimal: Ja					Ja			Nein	Nein		Ja
+AbstractBird:	Ja					Ja			Nein	Ja			Ja
+Eagle:			Ja *				Ja			Ja		Ja			Ja
+Main:			Ja *				Nein		Ja		Ja			Ja
+
+* Der Konstruktor AbstractAnimal ist sichtbar, wenn in diesen Klassen weitere Klassen mit extends AbstractAnimal erstellt.
+Die Sichtbarkeitsmodifikatoren verhindern somit nicht die Sichtbarkeit, jedoch ist der Konstruktor nicht ohne diesen Kontext sinnvoll / ausführbar.
+
+4)
+Overriding:
+Klasse AbstractAnimal, AbstractBird und Eagle. Hier werden die Methoden aus den Interfaces (BirdOfPrey, Flyable, Ingestable, Movable) implementiert. Dies muss spätestens bei einer Instanziierbaren Klasse passieren (wie durch vererbung move() in Eagle).
+
+Overloading:
+AbstractAnimal: burnFood, eat.
+(Nach Bearbeitung: AbstractBird Constructor, Eagle Constructor)
+Dies erlaubt es, Methoden gleich zu benennen solange sich die Typisierung der Parameter unterscheidet.
+
+3.
+1)
+AbstractBird tweety = new AbstractBird(100, 2);
+	nicht ok, eine Abstrakte Klasse kann nicht Instanziiert werden.
+Eagle amos = new Eagle(100, "Amos");
+	ok
+System.out.println(amos);
+	ok
+	"de.uulm.in.pm.api.Eagle@5e265ba4"
+Eagle amos2 = new Eagle(100, "Amos");
+	ok
+System.out.println(amos == amos2);
+	ok
+	'false'
+System.out.println(amos.equals(amos2));
+	ok
+	'false'
+
+2)
+System.out.println(amos);
+	"[Eagle 1579572132]: Amos"
+3)
+amos == amos2
+	'false'
+amos.equals(amos2)
+	'true'
+
+4...
+
+5. Exception-Handling 3)
+Die Exception kann bei allen Aufrufen von burnFood() auftreeten, hier also ausgelöst in der Eagle.java.
+Man sollte die Exception entweder in Eagle oder Main fangen und behandeln. Dies geschieht hier durch einen Try-Catch-Block in der Main.main()
+
+6. Generics
+
