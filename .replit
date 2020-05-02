@@ -1,0 +1,2 @@
+language = "java10"
+run = "cd src; javac de/uulm/in/pm/test/Main.java && java de.uulm.in.pm.test.Main"
