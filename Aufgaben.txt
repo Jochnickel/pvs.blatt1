@@ -1,20 +1,20 @@
-2.
+2. Information Hiding
 1)
-Sichtbar:		inTheAir	wings	food	legs	name
-AbstractAnimal: Nein		Nein	Ja		Ja		Nein
-AbstractBird:	Ja			Ja		Nein	Ja		Nein
-Eagle:			Nein		Ja		Nein	Ja		Ja
-Main:			Nein		Nein	Nein	Nein	Nein
+Sichtbar:       inTheAir    wings   food    legs    name
+AbstractAnimal: Nein        Nein    Ja      Ja      Nein
+AbstractBird:   Ja          Ja      Nein    Ja      Nein
+Eagle:          Nein        Ja      Nein    Ja      Ja
+Main:           Nein        Nein    Nein    Nein    Nein
 
 2)
-Nein, die Variable wings ist final und kann nur einmal gesetzt werden. Dies passiert schon im Konstruktor.
+Nein, die Variable "wings" ist final und kann nur einmal gesetzt werden. Dies passiert schon im Konstruktor.
 
 3)
-Sichtbar:		AbstractAnimal()	burnFood()	hunt()	isFlying()	eat()
-AbstractAnimal: Ja					Ja			Nein	Nein		Ja
-AbstractBird:	Ja					Ja			Nein	Ja			Ja
-Eagle:			Ja *				Ja			Ja		Ja			Ja
-Main:			Ja *				Nein		Ja		Ja			Ja
+Sichtbar:       AbstractAnimal()    burnFood()  hunt()  isFlying()  eat()
+AbstractAnimal: Ja                  Ja          Nein    Nein        Ja
+AbstractBird:   Ja                  Ja          Nein    Ja          Ja
+Eagle:          Ja *                Ja          Ja      Ja          Ja
+Main:           Ja *                Nein        Ja      Ja          Ja
 
 * Der Konstruktor AbstractAnimal ist sichtbar, wenn in diesen Klassen weitere Klassen mit extends AbstractAnimal erstellt.
 Die Sichtbarkeitsmodifikatoren verhindern somit nicht die Sichtbarkeit, jedoch ist der Konstruktor nicht ohne diesen Kontext sinnvoll / ausführbar.
@@ -28,10 +28,11 @@ AbstractAnimal: burnFood, eat.
 (Nach Bearbeitung: AbstractBird Constructor, Eagle Constructor)
 Dies erlaubt es, Methoden gleich zu benennen solange sich die Typisierung der Parameter unterscheidet.
 
-3.
+
+3. Identität und Gleichheit
 1)
 AbstractBird tweety = new AbstractBird(100, 2);
-	nicht ok, eine Abstrakte Klasse kann nicht Instanziiert werden.
+	nicht ok, ist eine Abstrakte Klasse kann nicht Instanziiert werden.
 Eagle amos = new Eagle(100, "Amos");
 	ok
 System.out.println(amos);
